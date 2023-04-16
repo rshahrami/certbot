@@ -1,0 +1,19 @@
+version: '3.7'
+services:
+  webserver:
+    image: nginx:1.23.1-v1
+    restart: always
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - ./volume/nginx/conf/:/etc/nginx/conf.d/:ro
+      - ./volume/certbot/www/:/var/www/certbot/:ro
+      - ./volume/certbot/conf/:/etc/nginx/ssl/:ro
+  certbot:
+    image: certbot/certbot:v2.5.0
+    user: root
+    volumes:
+      - ./volume/certbot/www/:/var/www/certbot/:rw
+      - ./volume/certbot/conf/:/etc/letsencrypt/:rw
+      #- /volume/certbot/logs/letsencrypt.log/:/var/log/letsencrypt/letsencrypt.log/:rw
