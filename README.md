@@ -1,7 +1,7 @@
 # certbot
 ## how to create certbot
 
-comment certbot service befor running the flowing command
+change server name in nginx config and set your domain in file. comment certbot service befor running the flowing command
 
 ```
 docker compose -f cert.yaml up -d
