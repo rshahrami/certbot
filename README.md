@@ -1,10 +1,15 @@
 # certbot
 ## how to create certbot
 
-comment certbot service befor running the flowing commad
+comment certbot service befor running the flowing command
 
 ```
 docker compose -f cert.yaml up -d
 ```
-ث
+uncomment certbot service and run the flowing conmand
 
+```
+docker compose run --rm  certbot certonly --webroot --webroot-path /var/www/certbot/ --dry-run -d example.org
+```
+
+set your domain instead of example.org
