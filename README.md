@@ -1,10 +1,10 @@
 # certbot
 ## how to create certbot
 
-disable certbot service befor running the flowing commad
+comment certbot service befor running the flowing commad
 
 ```
-$ cd ../lorem
-$ npm install
-$ npm start
+docker compose -f cert.yaml up -d
 ```
+ث
+
